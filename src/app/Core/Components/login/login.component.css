@@ -1,0 +1,58 @@
+form{
+    display: flex;
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+}
+.container{
+    display: initial;
+    border-color: violet;
+    width: 400px;
+    height: 500px;
+    flex-direction: row;
+    justify-content: stretch;
+    align-content: center;
+    background-color: white;
+}
+.app-logo{
+    width: 300px;
+    margin-left: 50px;
+}
+
+input#tId, input#password {
+    outline: 0;
+    font-size: 20px;
+    border-radius: 5px;
+}
+input#tId::placeholder, input#password::placeholder{
+  color: rgb(215, 232, 241)
+}
+button#submit{
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    border-color: rgb(68, 177, 240);
+    background-color:rgb(68, 177, 240)
+}
+
+button#submit:disabled{
+    cursor: default;
+    background-color: rgb(187, 225, 246)
+}
+.form-links{
+    margin-top: 20px;
+}
+a{
+    color: rgb(97, 159, 231);
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: underline;
+}  
+a:hover {
+    font-weight: 800;
+    color: rgb(68, 177, 240);
+}

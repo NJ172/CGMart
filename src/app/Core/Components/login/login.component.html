@@ -1,0 +1,55 @@
+<form  #loginValues="ngForm" (ngSubmit)="SubmitCredentials(loginValues)">
+    <div class="container row">
+        <div class="app-logo">
+            <input @fade type="image" src="assets/Images/CGMLogo.png" alt="me"/>
+        </div>
+        <div class="form-group full-width-field">
+            <div class="input-group">
+                <div class="input-group-addon">
+                    <span class="glyphicon glyphicon-user"></span> 
+                </div>
+                <input [(ngModel)]=tIds name="tId" #tId="ngModel" id="tId" type="text" 
+                    required placeholder="TID"
+                    class="form-control">
+                <!-- <div class="alert alert-danger" *ngIf="tId.touched && !tId.valid" >
+                    <div *ngIf="tId.errors.required" >Required</div>
+                </div> -->
+            </div>
+        </div>
+        <div class="form-group full-width-field">
+            <div class="input-group">
+                <div class="input-group-addon">
+                    <span class="glyphicon glyphicon-lock"></span> 
+                </div>
+                <input [(ngModel)]=passcode name="password" #password=ngModel id="password" 
+                    type="password"  required placeholder="Password"
+                    class="form-control">
+                <!-- <div class="alert alert-danger" *ngIf="password.touched && !password.valid">
+                    <div *ngIf="password.errors.required">Required</div>
+                </div> -->
+            </div>
+        </div>
+        <div class="checkbox">
+            <label class="lblcheckbox">
+                <input type="checkbox" [(ngModel)]=isCheckRC name="rememberCredentials" tabindex="-1">
+                <span class="checkmark"></span>
+                Remember Credentials
+            </label>
+        </div>
+        <div class="form-links">
+            <div class="links">
+                <a href="#" tabindex="-1">Report an Issue</a>
+            </div>
+            <div class="links">
+                <a href="#" tabindex="-1">Click here to open User Manual</a>
+            </div>
+        </div>
+        <button class="btn btn-primary col-sm-12" 
+            type="submit" [disabled]="!loginValues.valid"
+            id="submit">Login
+        </button>
+        <div class="links d-flex justify-content-center offset-sm-10">
+            <a href="#" tabindex="-1">Sign Up</a>
+        </div> 
+    </div>
+</form>

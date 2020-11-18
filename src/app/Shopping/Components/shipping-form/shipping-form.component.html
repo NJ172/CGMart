@@ -1,0 +1,42 @@
+<form #f="ngForm" (ngSubmit)="placeOrder()">
+    <div class="form-group">
+        <label for="customerName">Customer Name</label>
+        <input #customerName="ngModel" [(ngModel)]="shipping.customerName" 
+        name="customerName" id="customerName" 
+        type="text" class="form-control" required>
+        <div class="alert alert-danger" 
+        *ngIf="customerName.touched && customerName.invalid">
+        Customer Name is required</div>
+    </div>
+    <div class="form-group">
+        <label for="address">Address</label>
+        <input #address="ngModel" [(ngModel)]="shipping.address" name="address" 
+        id="address" type="text" 
+        class="form-control" required>                
+        <div class="alert alert-danger" *ngIf="address.touched && address.invalid">
+            <div *ngIf="address.errors.required">price is required</div>
+            <div *ngIf="address.errors.min">Minimum 0</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="streetArea">Street Area</label>
+        <input #streetArea="ngModel" [(ngModel)]="shipping.streetArea" 
+        name="streetArea" 
+        id="streetArea" type="text" 
+        class="form-control" required>                
+        <div class="alert alert-danger" *ngIf="streetArea.touched && streetArea.invalid">
+            <div *ngIf="streetArea.errors.required">Street Area is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="city">City</label>
+        <input #city="ngModel" [(ngModel)]="shipping.city" 
+        name="city" 
+        id="city" type="text" 
+        class="form-control" required>                
+        <div class="alert alert-danger" *ngIf="city.touched && city.invalid">
+            <div *ngIf="city.errors.required">City is required</div>
+        </div>
+    </div>
+    <button [disabled]="!f.valid" class="btn-primary" type="submit">Place Order</button>
+</form> 
